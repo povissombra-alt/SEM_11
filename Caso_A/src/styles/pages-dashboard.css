@@ -1,0 +1,181 @@
+/* ---------- Dashboard ---------- */
+.dashboard-grid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.dashboard-grid-main {
+  grid-template-columns: minmax(0, 1.72fr) minmax(300px, 0.88fr);
+}
+
+.dashboard-grid-secondary {
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.82fr);
+}
+
+.trend-card {
+  min-width: 0;
+}
+
+.recent-card,
+.goals-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.recent-list {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.recent-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+}
+
+.recent-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #617a94;
+  font-size: 8.5px;
+}
+
+.recent-footer > span svg {
+  color: #4f8f76;
+}
+
+.goals-card .goal-list {
+  margin-top: 12px;
+}
+
+.insight-strip {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 18px;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(52, 211, 153, 0.11), transparent 23%),
+    linear-gradient(100deg, rgba(14, 36, 42, 0.9), rgba(10, 21, 37, 0.95) 45%, rgba(12, 24, 42, 0.95));
+  border: 1px solid rgba(52, 211, 153, 0.16);
+  border-radius: 16px;
+  animation: rise-in 0.5s ease 0.1s both;
+}
+
+.insight-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  color: #6ee7b7;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.16);
+  border-radius: 12px;
+}
+
+.insight-copy {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.insight-copy span {
+  color: #6fae99;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.insight-copy strong {
+  color: #d3e5dd;
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.insight-strip .button {
+  min-height: 37px;
+  flex: none;
+  font-size: 10.5px;
+}
+
+@media (max-width: 1180px) {
+  .dashboard-grid-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .category-card .donut-layout {
+    grid-template-columns: 160px minmax(0, 1fr);
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 980px) {
+  .dashboard-grid-secondary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .goals-card .goal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 6px;
+  }
+
+  .goals-note {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-card .donut-layout {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 20px;
+    max-width: none;
+  }
+
+  .donut-legend {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+  }
+
+  .insight-strip {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .insight-strip .button {
+    width: 100%;
+  }
+
+  .transaction-item {
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+  }
+
+  .transaction-category {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .recent-footer > span {
+    max-width: 210px;
+  }
+
+  .donut-legend {
+    grid-template-columns: 1fr;
+  }
+}
